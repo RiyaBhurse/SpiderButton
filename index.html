@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider Button</title>
+</head>
+<body>
+    <div id="button-container">
+        <button class="spider-btn">Double</button>
+    </div>
+
+    <script>
+        // Get the container where buttons will be added
+        let container = document.getElementById('button-container');
+
+        // Add event listener to the container
+        container.addEventListener('click', function(event) {
+            // Check if a button was clicked
+            if (event.target && event.target.classList.contains('spider-btn')) {
+                // Create two new buttons
+                let btn1 = document.createElement('button');
+                let btn2 = document.createElement('button');
+                btn1.innerHTML = 'Double';
+                btn2.innerHTML = 'Double';
+                btn1.className = 'spider-btn';
+                btn2.className = 'spider-btn';
+
+                // Replace the clicked button with the new buttons
+                event.target.replaceWith(btn1, btn2);
+            }
+        });
+    </script>
+</body>
+</html>
